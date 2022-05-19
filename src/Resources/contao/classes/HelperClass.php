@@ -2,11 +2,10 @@
 
 namespace DieSchittigs\ClassesBundle;
 
-use Contao\CoreBundle\Exception\PageNotFoundException;
 use DieSchittigs\ClassesBundle\ClassesModel;
 use Contao\Frontend;
 
-class HelperClass extends \Frontend
+class HelperClass extends Frontend
 {
     public function addClassesToPage($objPage, $objLayout, $objPageRegular)
     {

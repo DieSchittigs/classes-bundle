@@ -11,7 +11,7 @@
 use DieSchittigs\ClassesBundle\ClassesModel;
 
 if (TL_MODE == "BE") {
-    $GLOBALS['TL_CSS'][] = 'bundles/contaohelper/backend.css';
+    $GLOBALS['TL_CSS'][] = 'bundles/classes/backend.css';
 }
 
 $GLOBALS['BE_MOD']['design']['themes']['tables'][] = 'tl_classes';

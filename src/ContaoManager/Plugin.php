@@ -4,24 +4,21 @@ declare(strict_types=1);
 
 namespace DieSchittigs\ClassesBundle\ContaoManager;
 
-use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
-use DieSchittigs\ClassesBundle\ContaoClassesBundle;
 
 class Plugin implements BundlePluginInterface
 {
     /**
      * {@inheritdoc}
      */
-    public function getBundles(ParserInterface $parser): array
+    public function getBundles(ParserInterface $parser)
     {
+
         return [
-            BundleConfig::create(ClassesBundle::class)
-                ->setLoadAfter([
-                    'Contao\CoreBundle\ContaoCoreBundle'
-                ]),
+            BundleConfig::create('DieSchittigs\ClassesBundle\ClassesBundle')
+                ->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle'])
         ];
     }
 }

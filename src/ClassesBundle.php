@@ -6,6 +6,6 @@ namespace DieSchittigs\ClassesBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ContaoClassesBundle extends Bundle
+class ClassesBundle extends Bundle
 {
 }

@@ -17,8 +17,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['customClass'] = [
     'sql'                     => "blob NULL"
 ];
 
-// Automatically add a wrapper stop element
-$GLOBALS['TL_DCA']['tl_content']['config']['onsubmit_callback'][] = ['tl_content_helper', 'generateWrapperStop'];
 
 class tl_content_helper extends tl_content
 {
@@ -39,20 +37,5 @@ class tl_content_helper extends tl_content
         }
 
         return $arrReturn;
-    }
-
-    public function generateWrapperStop(DataContainer $dc)
-    {
-        if ($dc->activeRecord->type != "wrapperStart") return;
-        if (!empty($dc->activeRecord->tstamp)) return;
-
-        $model = new \ContentModel();
-        $model->type = 'wrapperStop';
-        $model->ptable = $dc->activeRecord->ptable;
-        $model->pid = $dc->activeRecord->pid;
-        $model->tstamp = Date::floorToMinute();
-        $model->sorting = $dc->activeRecord->sorting * 2;
-
-        $model->save();
     }
 }

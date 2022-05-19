@@ -1,5 +1,5 @@
 {
-    "name": "dieschittigs/classes-bundle",
+    "name": "dieschittigs/contao-classes-bundle",
     "description": "Add css classes for contao",
     "type": "contao-bundle",
     "keywords": [

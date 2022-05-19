@@ -1,6 +1,6 @@
 <?php
 
-use DieSchittigs\ClassesBundle\ClassesModel;
+use DieSchittigs\ContaoClassesBundle\ClassesModel;
 
 
 foreach ($GLOBALS['TL_DCA']['tl_content']['palettes'] as $key => &$val) {

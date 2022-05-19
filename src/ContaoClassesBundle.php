@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace DieSchittigs\ClassesBundle;
+namespace DieSchittigs\ContaoClassesBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ClassesBundle extends Bundle
+class ContaoClassesBundle extends Bundle
 {
 }

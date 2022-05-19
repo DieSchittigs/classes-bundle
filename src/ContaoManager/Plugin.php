@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DieSchittigs\ClassesBundle\ContaoManager;
+namespace DieSchittigs\ContaoClassesBundle\ContaoManager;
 
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
@@ -17,7 +17,7 @@ class Plugin implements BundlePluginInterface
     {
 
         return [
-            BundleConfig::create('DieSchittigs\ClassesBundle\ClassesBundle')
+            BundleConfig::create('DieSchittigs\ContaoClassesBundle\ContaoClassesBundle')
                 ->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle'])
         ];
     }

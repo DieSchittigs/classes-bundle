@@ -1,6 +1,6 @@
 <?php
 
-use DieSchittigs\ClassesBundle\ClassesModel;
+use DieSchittigs\ContaoClassesBundle\ClassesModel;
 
 $GLOBALS['TL_DCA']['tl_article']['palettes']['default'] = str_replace(
     '{expert_legend:hide}',

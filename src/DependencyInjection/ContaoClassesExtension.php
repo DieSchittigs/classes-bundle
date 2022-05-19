@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace DieSchittigs\ClassesBundle\DependencyInjection;
+namespace DieSchittigs\ContaoClassesBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class ClassesExtension extends Extension
+class ContaoClassesExtension extends Extension
 {
     /**
      * {@inheritdoc}

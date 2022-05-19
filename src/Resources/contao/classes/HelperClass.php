@@ -1,8 +1,8 @@
 <?php
 
-namespace DieSchittigs\ClassesBundle;
+namespace DieSchittigs\ContaoClassesBundle;
 
-use DieSchittigs\ClassesBundle\ClassesModel;
+use DieSchittigs\ContaoClassesBundle\ClassesModel;
 use Contao\Frontend;
 
 class HelperClass extends Frontend

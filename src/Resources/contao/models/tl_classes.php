@@ -8,7 +8,7 @@
  * @license LGPL-3.0-or-later
  */
 
-namespace DieSchittigs\ClassesBundle;
+namespace DieSchittigs\ContaoClassesBundle;
 
 use Contao\Model;
 

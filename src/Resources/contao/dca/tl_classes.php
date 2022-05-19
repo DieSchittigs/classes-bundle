@@ -3,7 +3,7 @@
 
 use Contao\DataContainer;
 use Contao\DC_Table;
-use DieSchittigs\ClassesBundle\ClassesModel;
+use DieSchittigs\ContaoClassesBundle\ClassesModel;
 
 $GLOBALS['TL_DCA']['tl_classes'] = array(
 	// Config

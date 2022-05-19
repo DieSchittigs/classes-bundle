@@ -21,7 +21,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "DieSchittigs\\ClassesBundle\\": "src/"
+            "DieSchittigs\\ContaoClassesBundle\\": "src/"
         },
         "classmap": [
             "src/Resources/contao/"
@@ -33,6 +33,6 @@
         ]
     },
     "extra": {
-        "contao-manager-plugin": "DieSchittigs\\ClassesBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "DieSchittigs\\ContaoClassesBundle\\ContaoManager\\Plugin"
     }
 }

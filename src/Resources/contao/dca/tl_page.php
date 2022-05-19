@@ -1,6 +1,6 @@
 <?php
 
-use DieSchittigs\ClassesBundle\ClassesModel;
+use DieSchittigs\ContaoClassesBundle\ClassesModel;
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 

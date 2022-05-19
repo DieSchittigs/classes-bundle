@@ -1,0 +1,38 @@
+{
+    "name": "dieschittigs/classes-bundle",
+    "description": "Add css classes for contao",
+    "type": "contao-bundle",
+    "keywords": [
+        "contao",
+        "class",
+        "css",
+        "bundle"
+    ],
+    "require": {
+        "php": "^7.0",
+        "contao/core-bundle": "^4.9"
+    },
+    "license": "LGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Martin Schittig",
+            "email": "martin@dieschittigs.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DieSchittigs\\ClassesBundle\\": "src/"
+        },
+        "classmap": [
+            "src/Resources/contao/"
+        ],
+        "exclude-from-classmap": [
+            "src/Resources/contao/config/",
+            "src/Resources/contao/dca/",
+            "src/Resources/contao/languages/"
+        ]
+    },
+    "extra": {
+        "contao-manager-plugin": "DieSchittigs\\ClassesBundle\\ContaoManager\\Plugin"
+    }
+}

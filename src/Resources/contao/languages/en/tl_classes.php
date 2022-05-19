@@ -13,4 +13,7 @@ $GLOBALS['TL_LANG']['tl_classes']['showOnArticle'][0] = 'Use on articles';
 $GLOBALS['TL_LANG']['tl_classes']['showOnArticle'][1] = 'This class can be used in article settings';
 $GLOBALS['TL_LANG']['tl_classes']['showOnElement'][0] = 'Use on elements';
 $GLOBALS['TL_LANG']['tl_classes']['showOnElement'][1] = 'This class can be used in element settings';
-
+$GLOBALS['TL_LANG']['tl_classes']['excludeElements'][0] = 'Do not show on every element';
+$GLOBALS['TL_LANG']['tl_classes']['excludeElements'][1] = 'Restrict here the elements to which this class is applied';
+$GLOBALS['TL_LANG']['tl_classes']['elementTypes'][0] = 'Select elements';
+$GLOBALS['TL_LANG']['tl_classes']['elementTypes'][1] = 'Select the elements where the class is available for selection';

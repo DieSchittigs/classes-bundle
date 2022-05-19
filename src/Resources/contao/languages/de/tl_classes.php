@@ -13,4 +13,7 @@ $GLOBALS['TL_LANG']['tl_classes']['showOnArticle'][0] = 'Auf Artikel anwenden';
 $GLOBALS['TL_LANG']['tl_classes']['showOnArticle'][1] = 'Diese Klasse kann in den Artikel-Einstellungen ausgewählte werden';
 $GLOBALS['TL_LANG']['tl_classes']['showOnElement'][0] = 'Auf Elementen anwenden';
 $GLOBALS['TL_LANG']['tl_classes']['showOnElement'][1] = 'Diese Klasse kann in den Content-Elementen ausgewählte werden';
-
+$GLOBALS['TL_LANG']['tl_classes']['excludeElements'][0] = 'Nicht auf alle Elemente anwenden';
+$GLOBALS['TL_LANG']['tl_classes']['excludeElements'][1] = 'Schränken Sie hier die Elemente ein, bei denen diese Klasse angewendet wird';
+$GLOBALS['TL_LANG']['tl_classes']['elementTypes'][0] = 'Elemente auswählen';
+$GLOBALS['TL_LANG']['tl_classes']['elementTypes'][1] = 'Wählen Sie die Elemente, bei denen die Klasse zur Auswahl steht';

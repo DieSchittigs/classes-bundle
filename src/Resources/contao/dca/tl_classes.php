@@ -3,6 +3,8 @@
 
 use Contao\DataContainer;
 use Contao\DC_Table;
+use Contao\System;
+use Contao\CoreBundle\Security\ContaoCorePermissions;
 use DieSchittigs\ContaoClassesBundle\ClassesModel;
 
 $GLOBALS['TL_DCA']['tl_classes'] = array(
@@ -66,7 +68,13 @@ $GLOBALS['TL_DCA']['tl_classes'] = array(
 
 	// Palettes
 	'palettes' => array(
-		'default'                     => '{title_legend},name,cssClass;{showLegend},showOnPage,showOnArticle,showOnElement'
+		'__selector__'				  => array('excludeElements'),
+		'default'                     => '{title_legend},name,cssClass;{show_legend},showOnPage,showOnArticle,showOnElement,excludeElements'
+	),
+
+	// Subpalettes
+	'subpalettes' => array(
+		'excludeElements'             => 'elementTypes',
 	),
 
 	// Fields
@@ -123,8 +131,23 @@ $GLOBALS['TL_DCA']['tl_classes'] = array(
 			'inputType'               => 'checkbox',
 			'exclude'                 => true,
 			'filter'				  => true,
-			'eval'                    => array('tl_class' => 'w50 m12 clr'),
+			'eval'                    => array('submitOnChange' => true, 'tl_class' => 'w50 m12 clr'),
 			'sql'                     => "char(1) NOT NULL default ''"
+		],
+		'excludeElements' => [
+			'exclude'                 => true,
+			'inputType'               => 'checkbox',
+			'eval'                    => array('submitOnChange' => true, 'tl_class' => 'w50 m12 clr'),
+			'sql'                     => "char(1) NOT NULL default ''"
+		],
+		'elementTypes' => [
+			'exclude'                 => true,
+			'filter'                  => true,
+			'inputType'               => 'checkboxWizard',
+			'options_callback'        => array('tl_classes', 'getContentElements'),
+			'reference'               => &$GLOBALS['TL_LANG']['CTE'],
+			'eval'                    => array('multiple' => true),
+			'sql'                     => "blob NULL"
 		],
 	)
 );
@@ -167,5 +190,23 @@ class tl_classes extends Backend
 		$html .= "</div>\n";
 
 		return $html;
+	}
+
+	/**
+	 * Return all content elements as array
+	 *
+	 * @return array
+	 */
+	public function getContentElements()
+	{
+
+		$groups = array();
+
+		foreach ($GLOBALS['TL_CTE'] as $k => $v) {
+			foreach (array_keys($v) as $kk) {
+				$groups[$kk] = $kk;
+			}
+		}
+		return $groups;
 	}
 }

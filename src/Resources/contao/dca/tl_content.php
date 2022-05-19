@@ -22,7 +22,7 @@ $GLOBALS['TL_DCA']['tl_content']['config']['onsubmit_callback'][] = ['tl_content
 
 class tl_content_helper extends tl_content
 {
-    public function getClasses()
+    public function getClasses(DataContainer $dc)
     {
         $objClasses = ClassesModel::findByShowOnElement(1);
 
@@ -30,6 +30,11 @@ class tl_content_helper extends tl_content
 
         $arrReturn = [];
         while ($objClasses->next()) {
+
+            if ($objClasses->excludeElements && @!in_array($dc->activeRecord->type, unserialize($objClasses->elementTypes))) {
+                continue;
+            }
+
             $arrReturn[$objClasses->id] = $objClasses->name . ' [' . $objClasses->cssClass . ']';
         }
 

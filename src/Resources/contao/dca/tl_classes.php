@@ -183,9 +183,12 @@ class tl_classes extends Backend
 
 		$html .= ' <span style="color:#999;padding-left:3px;font-family:monospace">[ .' . $row['cssClass'] . ' ]</span>';
 
+
 		$html .= ($row['showOnPage']) ? '<span style="color:white;margin-left:3px;background: #666; padding:0 2px; font-size: 90%;border-radius:2px;">Pages ✔</span>' : '';
 		$html .= ($row['showOnArticle']) ? '<span style="color:white;margin-left:3px;background: #888; padding:0 2px; font-size: 90%;border-radius:2px;">Articles ✔</span>' : '';
-		$html .= ($row['showOnElement']) ? '<span style="color:white;margin-left:3px;background: #aaa; padding:0 2px; font-size: 90%;border-radius:2px;">Elements ✔</span>' : '';
+
+		$types = ($row['excludeElements']) ? '( ce_' . implode(' | ce_', unserialize($row['elementTypes'])) . ' )' : '';
+		$html .= ($row['showOnElement']) ? '<span style="color:white;margin-left:3px;background: #aaa; padding:0 2px; font-size: 90%;border-radius:2px;">Elements ✔ ' . $types . '</span>' : '';
 
 		$html .= "</div>\n";
 

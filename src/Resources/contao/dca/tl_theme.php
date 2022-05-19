@@ -3,5 +3,5 @@
 $GLOBALS['TL_DCA']['tl_theme']['config']['ctable'][] = 'tl_classes';
 $GLOBALS['TL_DCA']['tl_theme']['list']['operations']['classes'] = [
     'href'                => 'table=tl_classes',
-    'icon'                => 'bundles/classes/tags.svg'
+    'icon'                => 'bundles/contaoclasses/tags.svg'
 ];

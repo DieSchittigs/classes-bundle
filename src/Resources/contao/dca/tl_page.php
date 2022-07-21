@@ -7,8 +7,11 @@ use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 PaletteManipulator::create()
     ->addLegend('design_legend', 'expert_legend', PaletteManipulator::POSITION_BEFORE)
-    ->addField('customClass', 'design_legend')
-    ->applyToPalette('regular', 'tl_page');
+    ->addField('customClass', 'design_legend', PaletteManipulator::POSITION_APPEND)
+    ->applyToPalette('regular', 'tl_page')
+    ->applyToPalette('error_401', 'tl_page')
+    ->applyToPalette('error_403', 'tl_page')
+    ->applyToPalette('error_404', 'tl_page');
 
 
 $GLOBALS['TL_DCA']['tl_page']['fields']['customClass'] = [

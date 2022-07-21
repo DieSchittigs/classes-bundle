@@ -2,11 +2,10 @@
 
 use DieSchittigs\ContaoClassesBundle\ClassesModel;
 
-$GLOBALS['TL_DCA']['tl_article']['palettes']['default'] = str_replace(
-    '{expert_legend:hide}',
-    '{design_legend},customClass;{expert_legend:hide}',
-    $GLOBALS['TL_DCA']['tl_article']['palettes']['default']
-);
+PaletteManipulator::create()
+    ->addLegend('design_legend', 'expert_legend', PaletteManipulator::POSITION_BEFORE)
+    ->addField('customClass', 'design_legend', PaletteManipulator::POSITION_APPEND)
+    ->applyToPalette('default', 'tl_article');
 
 $GLOBALS['TL_DCA']['tl_article']['fields']['customClass'] = [
     'label'                   => &$GLOBALS['TL_LANG']['tl_article']['customClass'],

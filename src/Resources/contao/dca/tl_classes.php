@@ -105,7 +105,7 @@ $GLOBALS['TL_DCA']['tl_classes'] = array(
 			'eval'                    => array('maxlength' => 64, 'tl_class' => 'w50'),
 			'save_callback'           => array(
 				static function ($value) {
-					if (!preg_match('/^[_a-zA-Z]+[_a-zA-Z0-9\-\s]*$/', $value)) {
+					if (!preg_match('/^([_a-zA-Z]+[_a-zA-Z\d-]*\s?)+$/', $value)) {
 						throw new RuntimeException($GLOBALS['TL_LANG']['ERR']['invalidClassName']);
 					}
 					return $value;

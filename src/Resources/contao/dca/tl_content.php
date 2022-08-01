@@ -1,7 +1,7 @@
 <?php
 
 use DieSchittigs\ContaoClassesBundle\ClassesModel;
-
+use Contao\DataContainer;
 
 foreach ($GLOBALS['TL_DCA']['tl_content']['palettes'] as $key => &$val) {
     if ($key == '__selector__' or $key == 'default') continue;

@@ -1,6 +1,7 @@
 <?php
 
 use DieSchittigs\ContaoClassesBundle\ClassesModel;
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 PaletteManipulator::create()
     ->addLegend('design_legend', 'expert_legend', PaletteManipulator::POSITION_BEFORE)

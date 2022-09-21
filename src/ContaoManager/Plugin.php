@@ -18,7 +18,7 @@ class Plugin implements BundlePluginInterface
 
         return [
             BundleConfig::create('DieSchittigs\ContaoClassesBundle\ContaoClassesBundle')
-                ->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle'])
+                ->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle', 'DieSchittigs\ContaoWrapperBundle\ContaoWrapperBundle'])
         ];
     }
 }

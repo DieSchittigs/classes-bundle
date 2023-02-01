@@ -10,7 +10,7 @@ use DieSchittigs\ContaoClassesBundle\ClassesModel;
 $GLOBALS['TL_DCA']['tl_classes'] = array(
 	// Config
 	'config' => array(
-		'dataContainer'               => DC_Table::class,
+		'dataContainer'               => Contao\DC_Table::class,
 		'ptable'                      => 'tl_theme',
 		'switchToEdit'                => true,
 		'enableVersioning'            => true,
@@ -26,7 +26,7 @@ $GLOBALS['TL_DCA']['tl_classes'] = array(
 	// List
 	'list' => array(
 		'sorting' => array(
-			'mode'                    => DataContainer::MODE_PARENT,
+			'mode'                    => 4,
 			'fields'                  => array('name'),
 			'panelLayout'             => 'filter;search,limit',
 			'headerFields'            => array('name', 'author', 'tstamp'),
@@ -94,7 +94,7 @@ $GLOBALS['TL_DCA']['tl_classes'] = array(
 			'inputType'               => 'text',
 			'exclude'                 => true,
 			'search'                  => true,
-			'flag'                    => DataContainer::SORT_INITIAL_LETTER_ASC,
+			'flag'                    => 1,
 			'eval'                    => array('mandatory' => true, 'maxlength' => 64, 'tl_class' => 'w50'),
 			'sql'                     => "varchar(64) NULL"
 		),

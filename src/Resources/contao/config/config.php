@@ -1,5 +1,8 @@
 <?php
 
+use Contao\System;
+use DieSchittigs\ContaoClassesBundle\ClassesModel;
+
 /**
  * Contao ClassSelect Modules Set
  *
@@ -8,9 +11,11 @@
  * @license LGPL-3.0+
  */
 
-use DieSchittigs\ContaoClassesBundle\ClassesModel;
 
-if (TL_MODE == "BE") {
+$request = System::getContainer()->get('request_stack')->getCurrentRequest();
+$scopeMatcher = System::getContainer()->get('contao.routing.scope_matcher');
+
+if (null !== $request && $scopeMatcher->isBackendRequest($request)) {
     $GLOBALS['TL_CSS'][] = 'bundles/contaoclasses/backend.css';
 }
 

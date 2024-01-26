@@ -1,6 +1,7 @@
 <?php
 
-
+use Contao\Backend;
+use Contao\BackendUser;
 use Contao\DataContainer;
 use Contao\DC_Table;
 use Contao\System;

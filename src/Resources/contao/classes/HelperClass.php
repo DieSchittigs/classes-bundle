@@ -4,6 +4,9 @@ namespace DieSchittigs\ContaoClassesBundle;
 
 use DieSchittigs\ContaoClassesBundle\ClassesModel;
 use Contao\Frontend;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
+use Contao\ContentElement;
+use Contao\ContentModel;
 
 class HelperClass extends Frontend
 {
@@ -35,11 +38,12 @@ class HelperClass extends Frontend
         $objRow->cssID = serialize([$arrCss[0], trim($arrCss[1])]);
     }
 
-    public function addClassesToElement($objRow, $strBuffer, $objElement)
+    //public function addClassesToElement($objRow, $strBuffer, $objElement)
+    public function addClassesToElement(ContentModel $contentModel, string $buffer, $element)
     {
 
 
-        if (!is_array($arrCustom = unserialize($objElement->customClass))) return $strBuffer;
+        if (!is_array($arrCustom = unserialize($contentModel->customClass))) return $buffer;
 
         $arrCss = [];
         foreach ($arrCustom as $classID) {
@@ -47,11 +51,11 @@ class HelperClass extends Frontend
             $arrCss[] = ' ' . $objClass->cssClass;
         }
         // replace string buffer
-        $strBuffer = str_replace('class="ce_' . $objElement->type, 'class="ce_' . $objElement->type . ' ' . implode(' ', $arrCss) . ' ', $strBuffer);
+        $buffer = str_replace('class="content-' . $contentModel->type, 'class="content-' . $contentModel->type . ' ' . implode(' ', $arrCss) . ' ', $buffer);
 
         // replace in row
-        $objRow->cssID = serialize([unserialize($objRow->cssID)[0], unserialize($objRow->cssID)[0] . ' ' . implode(' ', $arrCss)]);
-
-        return $strBuffer;
+        $contentModel->cssID = serialize([unserialize($contentModel->cssID)[0], unserialize($contentModel->cssID)[0] . ' ' . implode(' ', $arrCss)]);
+        dump($contentModel);
+        return $buffer;
     }
 }

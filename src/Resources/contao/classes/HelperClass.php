@@ -55,7 +55,6 @@ class HelperClass extends Frontend
 
         // replace in row
         $contentModel->cssID = serialize([unserialize($contentModel->cssID)[0], unserialize($contentModel->cssID)[0] . ' ' . implode(' ', $arrCss)]);
-        dump($contentModel);
         return $buffer;
     }
 }

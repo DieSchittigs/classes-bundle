@@ -182,7 +182,7 @@ class tl_classes extends Backend
 		$html = '<div class="tl_content_left">';
 		$html .= $row['name'];
 
-		$html .= ' <span style="color:#999;padding-left:3px;font-family:monospace">[ .' . $row['cssClass'] . ' ]</span>';
+		$html .= ' <span style="color:#999;padding-left:3px;font-family:monospace"> class="' . $row['cssClass'] . '" </span>';
 
 
 		$html .= ($row['showOnPage']) ? '<span style="color:white;margin-left:3px;background: #666; padding:0 2px; font-size: 90%;border-radius:2px;">Pages ✔</span>' : '';

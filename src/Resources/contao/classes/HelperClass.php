@@ -41,7 +41,8 @@ class HelperClass extends Frontend
     //public function addClassesToElement($objRow, $strBuffer, $objElement)
     public function addClassesToElement(ContentModel $contentModel, string $buffer, $element)
     {
-
+        $cssId = unserialize($contentModel->cssID)[1];
+        $classes = 'content-' . $contentModel->type . ((empty($cssId)) ? '' : ' ' . $cssId);
 
         if (!is_array($arrCustom = unserialize($contentModel->customClass))) return $buffer;
 
@@ -50,11 +51,16 @@ class HelperClass extends Frontend
             $objClass = ClassesModel::findBy(['id=?', 'showOnElement=?'], [$classID, 1]);
             $arrCss[] = ' ' . $objClass->cssClass;
         }
-        // replace string buffer
-        $buffer = str_replace('class="content-' . $contentModel->type, 'class="content-' . $contentModel->type . ' ' . implode(' ', $arrCss) . ' ', $buffer);
+        if (is_array($arrCss)) {
+            $classes .= implode(' ', $arrCss);
+        }
 
-        // replace in row
-        $contentModel->cssID = serialize([unserialize($contentModel->cssID)[0], unserialize($contentModel->cssID)[0] . ' ' . implode(' ', $arrCss)]);
+
+        $rgxp = "/class\=\"[\w\s-]*content\-[\w\s-]*\"/m";
+        $replace = 'class="' . $classes . '"';
+        // replace string buffer
+
+        $buffer = preg_replace($rgxp, $replace, $buffer, 1);
         return $buffer;
     }
 }

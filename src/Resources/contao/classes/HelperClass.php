@@ -41,7 +41,7 @@ class HelperClass extends Frontend
     //public function addClassesToElement($objRow, $strBuffer, $objElement)
     public function addClassesToElement(ContentModel $contentModel, string $buffer, $element)
     {
-        $cssId = unserialize($contentModel->cssID)[1];
+        $cssId = (is_array(unserialize($contentModel->cssID))) ? unserialize($contentModel->cssID)[1] : '';
         $classes = 'content-' . $contentModel->type . ((empty($cssId)) ? '' : ' ' . $cssId);
 
         if (!is_array($arrCustom = unserialize($contentModel->customClass))) return $buffer;

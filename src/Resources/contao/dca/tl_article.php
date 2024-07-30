@@ -22,7 +22,7 @@ class tl_article_helper extends tl_article
 {
     public function getClasses()
     {
-        $objClasses = ClassesModel::findByShowOnArticle(1);
+        $objClasses = ClassesModel::findByShowOnArticle(1, ['order' => 'tl_classes.name']);
 
         if ($objClasses === null) return;
 

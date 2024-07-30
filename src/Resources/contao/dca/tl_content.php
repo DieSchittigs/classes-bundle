@@ -22,7 +22,7 @@ class tl_content_helper extends tl_content
 {
     public function getClasses(DataContainer $dc)
     {
-        $objClasses = ClassesModel::findByShowOnElement(1);
+        $objClasses = ClassesModel::findByShowOnElement(1, ['order' => 'tl_classes.name']);
 
         if ($objClasses === null) return;
 

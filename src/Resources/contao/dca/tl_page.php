@@ -29,7 +29,7 @@ class tl_page_helper extends tl_page
     public function getClasses()
     {
 
-        $objClasses = ClassesModel::findByShowOnPage(1);
+        $objClasses = ClassesModel::findByShowOnPage(1, ['order' => 'tl_classes.name']);
 
         if ($objClasses === null) return;
 
